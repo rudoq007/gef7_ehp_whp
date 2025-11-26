@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highland Guardians | GEF 7 PNG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/drone_photo1.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <!-- Project Logo Placeholder -->
+                    <div class="text-2xl font-bold text-green-700 tracking-tight">
+                        <i class="fa-solid fa-leaf mr-2"></i>Name blo Site
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-green-700 transition">About</a>
+                    <a href="#impact" class="text-gray-600 hover:text-green-700 transition">Impact</a>
+                    <a href="#partners" class="text-gray-600 hover:text-green-700 transition">Partners</a>
+                </div>
+                <a href="https://png-nfms.org/#" target="_blank" class="bg-green-700 text-white px-5 py-2 rounded-full font-medium hover:bg-green-800 transition shadow-lg">
+                    Forest and Land Use Monitoring Geo-Portal <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-4xl">
+            <span class="inline-block py-1 px-3 rounded-full bg-green-500/20 border border-green-400 text-green-100 text-sm font-semibold mb-6 backdrop-blur-sm">
+                GEF ID 10515 • FY2025 Report
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                Restoring the <span class="text-green-400">Highlands</span> of Papua New Guinea
+            </h1>
+            <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light">
+                An interactive journey through satellite monitoring, community conservation, and the 28,000 hectares of biodiversity we are protecting together.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://gef7-png-highlands.visualizer.reearth.io" target="_blank" class="bg-green-600 text-white text-lg px-8 py-4 rounded-lg font-bold hover:bg-green-700 transition shadow-xl hover:scale-105 transform duration-200">
+                    <i class="fa-solid fa-earth-oceania mr-2"></i> Launch Story Map
+                </a>
+                <a href="#about" class="bg-white/10 backdrop-blur-md border border-white/30 text-white text-lg px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition">
+                    Read Report Summary
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About The Project -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-green-700 font-bold uppercase tracking-wider text-sm mb-2">Project Overview</h2>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-6">Enabling Sustainable Production Landscapes</h3>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        Papua New Guinea’s Highlands are a biodiversity treasure under pressure. Launched in 2021 with a <strong>$16.85M GEF grant</strong>, this project aims to conserve threatened species while securing livelihoods for local communities.
+                    </p>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                        Despite early challenges, the project is back on a positive trajectory. We have moved from planning to action, establishing critical data systems that monitor the forest from the sky and working directly with customary landowners on the ground.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <span class="block text-3xl font-bold text-gray-900">2021-27</span>
+                            <span class="text-sm text-gray-500">Project Duration</span>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <span class="block text-3xl font-bold text-gray-900">14</span>
+                            <span class="text-sm text-gray-500">Priority Sites</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder for Image -->
+                <div class="relative h-96 rounded-2xl overflow-hidden shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1596503673327-0c58d042f9b8?q=80&w=2070" alt="PNG Highlands" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                        <p class="text-white font-medium">Eastern & Western Highlands Provinces</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Impact Stats (Components) -->
+    <section id="impact" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">FY2025 Implementation Highlights</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Real results from the latest Project Implementation Report (PIR).</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 hover:border-green-500 transition duration-300">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400 mb-6">
+                        <i class="fa-solid fa-satellite text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">The Eye in the Sky</h3>
+                    <p class="text-slate-400 mb-4">The new <strong>PNG Forest and Land Use Monitoring Geo-Portal</strong> is live, providing near real-time deforestation alerts.</p>
+                    <span class="text-green-400 text-sm font-bold">● Component 1: Satisfactory</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 hover:border-green-500 transition duration-300">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400 mb-6">
+                        <i class="fa-solid fa-tree text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tangible Gains</h3>
+                    <p class="text-slate-400 mb-4">Successfully gazetted <strong>28,273 hectares</strong> of new protected areas, including the massive Velotige CCA.</p>
+                    <span class="text-yellow-500 text-sm font-bold">● Component 2: Mod. Satisfactory</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 hover:border-green-500 transition duration-300">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400 mb-6">
+                        <i class="fa-solid fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Community Livelihoods</h3>
+                    <p class="text-slate-400 mb-4">FPIC process completed at 10 sites. Coffee and honey value-chain pilots are set to launch in 2026.</p>
+                    <span class="text-yellow-500 text-sm font-bold">● Component 2: Mod. Satisfactory</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h3 class="text-slate-500 font-semibold uppercase tracking-widest mb-10">Executed In Partnership With</h3>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-80 grayscale hover:grayscale-0 transition duration-500">
+                <!-- Replace src with actual logo URLs if you have them hosted, otherwise these are placeholders -->
+                <div class="text-2xl font-bold text-slate-700 flex items-center gap-2">
+                    <img src="https://www.thegef.org/sites/default/files/2023-04/GEF_logo_main_fullname_RGB_600x270_2023.png" class="h-16" alt="GEF Logo">
+                </div>
+                <div class="text-2xl font-bold text-slate-700 flex items-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/FAO_logo.svg" class="h-16" alt="FAO Logo">
+                </div>
+                 <div class="text-2xl font-bold text-slate-700 flex items-center gap-2">
+                    <img src="https://png-data.sprep.org/sites/default/files/CEPA%20logo.PNG" class="h-16" alt="CEPA Logo">
+                </div>
+                 <div class="text-2xl font-bold text-slate-700 flex items-center gap-2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtNKDsptwyZem2PbLUjEsWoW2PyWXMNkAoSg&s" class="h-16" alt="CEPA Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <h4 class="text-xl font-bold text-green-400">Highland Guardians</h4>
+                <p class="text-slate-400 text-sm mt-2">Enabling Sustainable Production Landscapes in PNG</p>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-slate-400 text-sm mb-2">Project Contact</p>
+                <a href="mailto:rua.puka@fao.org" class="text-lg font-semibold hover:text-green-400 transition">
+                    rua.puka@fao.org
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-slate-800 mt-10 pt-6 text-center text-slate-600 text-sm">
+            <p>&copy; 2025 FAO / GEF. Data licensed under CC BY 4.0.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
