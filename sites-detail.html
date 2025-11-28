@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Detail | Highland Guardians</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="sites.html" class="text-green-700 font-bold hover:text-green-800 transition">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>Back to All Sites
+                </a>
+                <a href="index.html" class="text-sm text-gray-500 hover:text-green-700">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Site Content (Populated via JS) -->
+    <div id="content" class="pt-24 pb-20">
+        <!-- Hero Image -->
+        <div class="w-full h-[50vh] relative">
+            <img id="site-image" src="" alt="Site Image" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                <div class="max-w-7xl mx-auto px-4 w-full pb-12">
+                    <span id="site-status" class="bg-green-600 text-white px-3 py-1 rounded text-sm font-bold mb-4 inline-block">Protected</span>
+                    <h1 id="site-title" class="text-5xl font-extrabold text-white mb-2">Site Name</h1>
+                    <p id="site-location" class="text-xl text-green-200"><i class="fa-solid fa-location-dot mr-2"></i>Province Name</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Details -->
+        <div class="max-w-4xl mx-auto px-4 mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="md:col-span-2">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">About this Area</h2>
+                    <p id="site-desc" class="text-gray-600 leading-relaxed text-lg mb-8">
+                        Description goes here...
+                    </p>
+                    
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Conservation Focus</h3>
+                    <ul class="space-y-3 text-gray-600" id="site-features">
+                        <!-- List items injected here -->
+                    </ul>
+                </div>
+
+                <!-- Sidebar Stats -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-fit">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Key Stats</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="block text-xs text-gray-500 uppercase">Size</span>
+                            <span id="site-size" class="text-xl font-bold text-green-700">0 ha</span>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-gray-500 uppercase">FPIC Status</span>
+                            <span id="site-fpic" class="text-sm font-semibold text-gray-800">Completed</span>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-gray-500 uppercase">Primary Livelihood</span>
+                            <span id="site-livelihood" class="text-sm font-semibold text-gray-800">Coffee / Honey</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT: EDIT YOUR DATA HERE -->
+    <script>
+        // --- 1. DEFINE YOUR 14 SITES HERE ---
+        const siteData = {
+            "velotige": {
+                title: "Velotige CCA",
+                location: "Eastern Highlands Province",
+                status: "Gazetted (June 2025)",
+                size: "26,949 ha",
+                fpic: "Completed",
+                livelihood: "Eco-Tourism, Coffee",
+                image: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1200",
+                description: "The Velotige CCA is the largest new protected area established under GEF-7. It serves as a critical biological corridor connecting the upper montane forests.",
+                features: ["Critical habitat for Tree Kangaroos", "High-altitude cloud forest", "Water catchment for 3 districts"]
+            },
+            "hogave": {
+                title: "Hogave CCA",
+                location: "Eastern Highlands Province",
+                status: "Gazetted (June 2025)",
+                size: "1,229 ha",
+                fpic: "Completed",
+                livelihood: "Honey, Agroforestry",
+                image: "https://images.unsplash.com/photo-1448375240586-dfd8d395ea6c?q=80&w=1200",
+                description: "Hogave demonstrates how smaller, community-managed areas can provide immense value. The local community has been instrumental in piloting the new honey value chain.",
+                features: ["Community-led monitoring", "Pilot site for NFI training", "Rich birdlife diversity"]
+            },
+            "natauka": {
+                title: "Natauka-Zamu",
+                location: "Eastern Highlands Province",
+                status: "Gazetted (June 2025)",
+                size: "94 ha",
+                fpic: "Completed",
+                livelihood: "Conservation",
+                image: "https://images.unsplash.com/photo-1596503673327-0c58d042f9b8?q=80&w=1200",
+                description: "Though small in size, Natauka-Zamu represents a vital step in engaging customary landowners in formal conservation agreements.",
+                features: ["Rare orchid species", "Riverine ecosystem protection"]
+            },
+            // --- ADD YOUR OTHER SITES BELOW ---
+            "site4": {
+                title: "Priority Site 4",
+                location: "Western Highlands",
+                status: "In Progress",
+                size: "TBD",
+                fpic: "Ongoing",
+                livelihood: "Coffee",
+                image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1200",
+                description: "This site is currently undergoing biodiversity assessments.",
+                features: ["Feature 1", "Feature 2"]
+            }
+        };
+
+        // --- 2. LOGIC TO LOAD CONTENT (DO NOT TOUCH) ---
+        const params = new URLSearchParams(window.location.search);
+        const siteId = params.get('id');
+        const site = siteData[siteId];
+
+        if (site) {
+            document.getElementById('site-title').innerText = site.title;
+            document.getElementById('site-location').innerHTML = `<i class="fa-solid fa-location-dot mr-2"></i>${site.location}`;
+            document.getElementById('site-status').innerText = site.status;
+            document.getElementById('site-size').innerText = site.size;
+            document.getElementById('site-fpic').innerText = site.fpic;
+            document.getElementById('site-livelihood').innerText = site.livelihood;
+            document.getElementById('site-desc').innerText = site.description;
+            document.getElementById('site-image').src = site.image;
+            
+            // Load features list
+            const featuresList = document.getElementById('site-features');
+            site.features.forEach(feat => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fa-solid fa-check text-green-500 mr-2"></i>${feat}`;
+                featuresList.appendChild(li);
+            });
+        } else {
+            document.getElementById('content').innerHTML = "<div class='text-center pt-32'><h1 class='text-3xl'>Site not found</h1><a href='sites.html' class='text-blue-500'>Return to list</a></div>";
+        }
+    </script>
+</body>
+</html>
