@@ -59,6 +59,13 @@
                     <ul class="space-y-3 text-gray-600" id="site-features">
                         <!-- List items injected here -->
                     </ul>
+                     <!-- ADDED: Website Link Container -->
+                     <div id="site-website-container" class="mt-8 pt-6 border-t border-gray-200 hidden">
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Learn More</h4>
+                        <a id="site-website-link" href="#" target="_blank" class="inline-flex items-center text-green-700 font-semibold hover:text-green-800 transition">
+                            Visit Official Website <i class="fa-solid fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Sidebar Stats -->
@@ -110,7 +117,9 @@
                     "Pilot site for NFI training", 
                     "Rich birdlife diversity",
                     "Sustainable land-use planning underway"
-                ]
+                ],
+                // ADDED: Website URL
+                website: "https://hogaveconservation.com/"
             },
 
             // --- VELOTIGE CCA ---
@@ -190,6 +199,15 @@
                 li.innerHTML = `<i class="fa-solid fa-check text-green-500 mr-2"></i>${feat}`;
                 featuresList.appendChild(li);
             });
+            
+             // Logic: If website link exists, show it.
+             if (site.website && site.website.trim() !== "") {
+                const websiteContainer = document.getElementById('site-website-container');
+                const websiteLink = document.getElementById('site-website-link');
+                websiteLink.href = site.website;
+                websiteContainer.classList.remove('hidden');
+            }
+
         } else {
             document.getElementById('content').innerHTML = "<div class='text-center pt-32'><h1 class='text-3xl'>Site not found</h1><a href='sites.html' class='text-blue-500'>Return to list</a></div>";
         }
