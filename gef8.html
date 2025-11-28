@@ -97,19 +97,18 @@
                     </div>
                 </div>
 
-                <!-- Map Placeholder -->
+                <!-- Interactive Map Section -->
                 <div class="bg-slate-100 rounded-2xl p-4 border border-slate-200 shadow-lg">
-                    <!-- TIP: Replace 'src' below with the map image from your DOCX file -->
-                    <div class="aspect-[4/3] bg-slate-300 rounded-xl flex items-center justify-center overflow-hidden relative group">
-                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Papua_New_Guinea_relief_location_map.jpg/640px-Papua_New_Guinea_relief_location_map.jpg" alt="Map Placeholder" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition duration-500">
-                         <div class="absolute inset-0 flex items-center justify-center">
-                            <span class="bg-white/90 px-4 py-2 rounded-lg text-sm font-semibold shadow-sm text-slate-600">
-                                <i class="fa-solid fa-map-location-dot mr-2"></i>Gulf & Western Province Target Area
-                            </span>
-                         </div>
+                    <div class="aspect-[4/3] bg-slate-800 rounded-xl overflow-hidden relative shadow-inner">
+                         <!-- Iframe Embedded Here -->
+                         <iframe 
+                            src="https://c-01kb1bvak2c941grb9r8dngm4d.visualizer.reearth.io" 
+                            class="w-full h-full border-0"
+                            allowfullscreen
+                         ></iframe>
                     </div>
                     <p class="text-center text-xs text-slate-500 mt-3 italic">
-                        Targeting the Fly, Purari, and Kikori river basins.
+                        <i class="fa-solid fa-circle-info mr-1"></i> Interactive Map: Targeting the Fly, Purari, and Kikori river basins.
                     </p>
                 </div>
             </div>
