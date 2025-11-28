@@ -25,20 +25,29 @@
 
     <!-- Site Content (Populated via JS) -->
     <div id="content" class="pt-24 pb-20">
-        <!-- Hero Image -->
-        <div class="w-full h-[50vh] relative">
-            <img id="site-image" src="" alt="Site Image" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+        <!-- Hero Section (Map or Image) -->
+        <div class="w-full h-[60vh] relative bg-slate-900 overflow-hidden group">
+            
+            <!-- Media Container (JS injects Image or Map here) -->
+            <div id="hero-media" class="w-full h-full absolute inset-0"></div>
+
+            <!-- Text Overlay (Only shows if it's an image, hides for maps to make them clickable) -->
+            <div id="hero-overlay" class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end pointer-events-none">
                 <div class="max-w-7xl mx-auto px-4 w-full pb-12">
-                    <span id="site-status" class="bg-green-600 text-white px-3 py-1 rounded text-sm font-bold mb-4 inline-block">Protected</span>
-                    <h1 id="site-title" class="text-5xl font-extrabold text-white mb-2">Site Name</h1>
-                    <p id="site-location" class="text-xl text-green-200"><i class="fa-solid fa-location-dot mr-2"></i>Province Name</p>
+                    <span id="site-status" class="bg-green-600 text-white px-3 py-1 rounded text-sm font-bold mb-4 inline-block shadow-lg">Protected</span>
+                    <h1 id="site-title" class="text-5xl font-extrabold text-white mb-2 drop-shadow-md">Site Name</h1>
+                    <p id="site-location" class="text-xl text-green-200 drop-shadow-sm"><i class="fa-solid fa-location-dot mr-2"></i>Province Name</p>
                 </div>
             </div>
         </div>
 
         <!-- Details -->
         <div class="max-w-4xl mx-auto px-4 mt-12">
+            <!-- Map Toggle Notice -->
+            <div id="map-notice" class="hidden bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 text-blue-700 text-sm">
+                <i class="fa-solid fa-circle-info mr-2"></i>Interactive Map Mode. Use the controls on the map to explore.
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="md:col-span-2">
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">About this Area</h2>
@@ -74,10 +83,37 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT: EDIT YOUR DATA HERE -->
+    <!-- JAVASCRIPT: ADD YOUR INFO HERE -->
     <script>
-        // --- 1. DEFINE YOUR 14 SITES HERE ---
+        // --- 1. DEFINE YOUR SITES HERE ---
         const siteData = {
+            
+            // --- HOGAVE CCA (Updated with MAP Support) ---
+            "hogave": {
+                title: "Hogave CCA",
+                location: "Eastern Highlands Province",
+                status: "Gazetted (June 2025)",
+                size: "1,229 ha",
+                fpic: "Completed",
+                livelihood: "Honey & Coffee",
+                
+                // OPTION 1: IMAGE (Leave mapUrl empty if you want to show this image)
+                image: "https://images.unsplash.com/photo-1448375240586-dfd8d395ea6c?q=80&w=1200",
+                
+                // OPTION 2: MAP (Paste your iframe URL here. If this has text, it OVERRIDES the image)
+                // Example: mapUrl: "https://my.gfw-mapbuilder.org/...",
+                mapUrl: "", 
+
+                description: "Hogave demonstrates how smaller, community-managed areas can provide immense value. Gazetted in June 2025, this 1,229-hectare site serves as a model for community-led conservation. While livelihood roll-out has faced delays, the community has successfully completed conservation needs assessments.",
+                features: [
+                    "Community-led monitoring established", 
+                    "Pilot site for NFI training", 
+                    "Rich birdlife diversity",
+                    "Sustainable land-use planning underway"
+                ]
+            },
+
+            // --- VELOTIGE CCA ---
             "velotige": {
                 title: "Velotige CCA",
                 location: "Eastern Highlands Province",
@@ -86,20 +122,12 @@
                 fpic: "Completed",
                 livelihood: "Eco-Tourism, Coffee",
                 image: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1200",
+                mapUrl: "", // Add map URL here if available
                 description: "The Velotige CCA is the largest new protected area established under GEF-7. It serves as a critical biological corridor connecting the upper montane forests.",
                 features: ["Critical habitat for Tree Kangaroos", "High-altitude cloud forest", "Water catchment for 3 districts"]
             },
-            "hogave": {
-                title: "Hogave CCA",
-                location: "Eastern Highlands Province",
-                status: "Gazetted (June 2025)",
-                size: "1,229 ha",
-                fpic: "Completed",
-                livelihood: "Honey, Agroforestry",
-                image: "images/HCC_Protected-Areas-Map_wm2_page_1.jpg",
-                description: "Hogave demonstrates how smaller, community-managed areas can provide immense value. The local community has been instrumental in piloting the new honey value chain.",
-                features: ["Community-led monitoring", "Pilot site for NFI training", "Rich birdlife diversity"]
-            },
+
+            // --- NATAUKA-ZAMU ---
             "natauka": {
                 title: "Natauka-Zamu",
                 location: "Eastern Highlands Province",
@@ -108,24 +136,13 @@
                 fpic: "Completed",
                 livelihood: "Conservation",
                 image: "https://images.unsplash.com/photo-1596503673327-0c58d042f9b8?q=80&w=1200",
+                mapUrl: "",
                 description: "Though small in size, Natauka-Zamu represents a vital step in engaging customary landowners in formal conservation agreements.",
                 features: ["Rare orchid species", "Riverine ecosystem protection"]
-            },
-            // --- ADD YOUR OTHER SITES BELOW ---
-            "site4": {
-                title: "Priority Site 4",
-                location: "Western Highlands",
-                status: "In Progress",
-                size: "TBD",
-                fpic: "Ongoing",
-                livelihood: "Coffee",
-                image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1200",
-                description: "This site is currently undergoing biodiversity assessments.",
-                features: ["Feature 1", "Feature 2"]
             }
         };
 
-        // --- 2. LOGIC TO LOAD CONTENT (DO NOT TOUCH) ---
+        // --- 2. LOGIC TO LOAD CONTENT ---
         const params = new URLSearchParams(window.location.search);
         const siteId = params.get('id');
         const site = siteData[siteId];
@@ -138,7 +155,33 @@
             document.getElementById('site-fpic').innerText = site.fpic;
             document.getElementById('site-livelihood').innerText = site.livelihood;
             document.getElementById('site-desc').innerText = site.description;
-            document.getElementById('site-image').src = site.image;
+            
+            // Logic: If mapUrl exists, show iframe. If not, show image.
+            const mediaContainer = document.getElementById('hero-media');
+            const overlay = document.getElementById('hero-overlay');
+            const mapNotice = document.getElementById('map-notice');
+
+            if (site.mapUrl && site.mapUrl.trim() !== "") {
+                // Show Map
+                mediaContainer.innerHTML = `<iframe src="${site.mapUrl}" class="w-full h-full border-0" allowfullscreen></iframe>`;
+                overlay.classList.add('hidden'); // Hide text overlay so map is clickable
+                mapNotice.classList.remove('hidden'); // Show notice
+                
+                // Move title below map for readability
+                const titleBlock = document.createElement('div');
+                titleBlock.className = "mb-8";
+                titleBlock.innerHTML = `
+                    <h1 class="text-4xl font-extrabold text-gray-900 mb-2">${site.title}</h1>
+                    <p class="text-xl text-green-700"><i class="fa-solid fa-location-dot mr-2"></i>${site.location}</p>
+                `;
+                document.getElementById('content').insertBefore(titleBlock, document.querySelector('.max-w-4xl'));
+                
+            } else {
+                // Show Image
+                mediaContainer.innerHTML = `<img src="${site.image}" class="w-full h-full object-cover">`;
+                overlay.classList.remove('hidden');
+                mapNotice.classList.add('hidden');
+            }
             
             // Load features list
             const featuresList = document.getElementById('site-features');
