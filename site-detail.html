@@ -95,7 +95,7 @@
         // --- 1. DEFINE YOUR SITES HERE ---
         const siteData = {
             
-            // --- HOGAVE CCA (Updated with MAP Support) ---
+            // --- HOGAVE CCA (Updated with NEW ArcGIS Map) ---
             "hogave": {
                 title: "Hogave CCA",
                 location: "Eastern Highlands Province",
@@ -104,12 +104,10 @@
                 fpic: "Completed",
                 livelihood: "Honey & Coffee",
                 
-                // OPTION 1: IMAGE (Leave mapUrl empty if you want to show this image)
                 image: "https://images.unsplash.com/photo-1448375240586-dfd8d395ea6c?q=80&w=1200",
                 
-                // OPTION 2: MAP (Paste your iframe URL here. If this has text, it OVERRIDES the image)
-                // Example: mapUrl: "https://my.gfw-mapbuilder.org/...",
-                mapUrl: "https://my.gfw-mapbuilder.org/v1.latest/index.html?appid=7b064bdd85164c05863322c9aa86e8f9&report=false&b=webmap&l=en&z=14&coords=145.2407213%2C-6.3599639&d=5&ty=2001%2C2021&layers=PA_List_Criteria5_selected_shapefile_9283%2CPNG_Gazetted_Protected_Area_rev1_shapefile_9463%2CPNG_Proposed_Protected_Areas_new_shapefile_3858%2CExisting_PNG_Protected_Areas_HYL_shapefile_6102%2CKBA_PNG_HYL_shapefile_3343%2Chybas_lake_au_lev07_v1c_png_hyl_shapefile_6481%2Cpng_admbnda_adm1_nso_20190508_highlands_shapefile_1048&o=%2C%2C%2C%2C%2C%2C&gladconfirmed=false&gs=2025-11-28&ge=2025-11-28&vs=2025-11-25&ve=2025-11-26", 
+                // UPDATED: New ArcGIS Map URL for Hogave
+                mapUrl: "https://www.arcgis.com/apps/mapviewer/index.html?webmap=0fa7505facc94880888e8bf54193d7d9&extent=145.1826,-6.4074,145.3094,-6.3219", 
 
                 description: "Hogave demonstrates how smaller, community-managed areas can provide immense value. Gazetted in June 2025, this 1,229-hectare site serves as a model for community-led conservation. While livelihood roll-out has faced delays, the community has successfully completed conservation needs assessments.",
                 features: [
@@ -118,11 +116,10 @@
                     "Rich birdlife diversity",
                     "Sustainable land-use planning underway"
                 ],
-                // ADDED: Website URL
                 website: "https://hogaveconservation.com/"
             },
 
-            // --- VELOTIGE CCA ---
+            // --- VELOTIGE CCA (Updated with ArcGIS Map) ---
             "velotige": {
                 title: "Velotige CCA",
                 location: "Eastern Highlands Province",
@@ -131,12 +128,15 @@
                 fpic: "Completed",
                 livelihood: "Eco-Tourism, Coffee",
                 image: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1200",
-                mapUrl: "", // Add map URL here if available
+                
+                // ADDED: ArcGIS Map URL for Velotige
+                mapUrl: "https://www.arcgis.com/apps/mapviewer/index.html?webmap=0fa7505facc94880888e8bf54193d7d9&extent=145.1599,-6.0606,145.667,-5.7184",
+                
                 description: "The Velotige CCA is the largest new protected area established under GEF-7. It serves as a critical biological corridor connecting the upper montane forests.",
                 features: ["Critical habitat for Tree Kangaroos", "High-altitude cloud forest", "Water catchment for 3 districts"]
             },
 
-            // --- NATAUKA-ZAMU ---
+            // --- NATAUKA-ZAMU (Updated with ArcGIS Map) ---
             "natauka": {
                 title: "Natauka-Zamu",
                 location: "Eastern Highlands Province",
@@ -145,7 +145,10 @@
                 fpic: "Completed",
                 livelihood: "Conservation",
                 image: "https://images.unsplash.com/photo-1596503673327-0c58d042f9b8?q=80&w=1200",
-                mapUrl: "",
+                
+                // ADDED: ArcGIS Map URL for Natauka
+                mapUrl: "https://www.arcgis.com/apps/mapviewer/index.html?webmap=0fa7505facc94880888e8bf54193d7d9&extent=145.3617,-6.0294,145.4251,-5.9867",
+                
                 description: "Though small in size, Natauka-Zamu represents a vital step in engaging customary landowners in formal conservation agreements.",
                 features: ["Rare orchid species", "Riverine ecosystem protection"]
             }
@@ -165,7 +168,6 @@
             document.getElementById('site-livelihood').innerText = site.livelihood;
             document.getElementById('site-desc').innerText = site.description;
             
-            // Logic: If mapUrl exists, show iframe. If not, show image.
             const mediaContainer = document.getElementById('hero-media');
             const overlay = document.getElementById('hero-overlay');
             const mapNotice = document.getElementById('map-notice');
@@ -173,10 +175,9 @@
             if (site.mapUrl && site.mapUrl.trim() !== "") {
                 // Show Map
                 mediaContainer.innerHTML = `<iframe src="${site.mapUrl}" class="w-full h-full border-0" allowfullscreen></iframe>`;
-                overlay.classList.add('hidden'); // Hide text overlay so map is clickable
-                mapNotice.classList.remove('hidden'); // Show notice
+                overlay.classList.add('hidden'); 
+                mapNotice.classList.remove('hidden'); 
                 
-                // Move title below map for readability
                 const titleBlock = document.createElement('div');
                 titleBlock.className = "mb-8";
                 titleBlock.innerHTML = `
@@ -192,7 +193,6 @@
                 mapNotice.classList.add('hidden');
             }
             
-            // Load features list
             const featuresList = document.getElementById('site-features');
             site.features.forEach(feat => {
                 const li = document.createElement('li');
@@ -200,7 +200,6 @@
                 featuresList.appendChild(li);
             });
             
-             // Logic: If website link exists, show it.
              if (site.website && site.website.trim() !== "") {
                 const websiteContainer = document.getElementById('site-website-container');
                 const websiteLink = document.getElementById('site-website-link');
