@@ -95,7 +95,33 @@
         // --- 1. DEFINE YOUR SITES HERE ---
         const siteData = {
             
-            // --- HOGAVE CCA (Updated with NEW ArcGIS Map) ---
+            // --- 1. Mt. Gahavisuka ---
+            "gahavisuka": {
+                title: "Mt. Gahavisuka Provincial Park",
+                location: "Eastern Highlands Province",
+                status: "Provincial Park",
+                size: "TBD",
+                fpic: "Completed",
+                livelihood: "Eco-tourism",
+                image: "https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1200",
+                description: "A well-established provincial park located near Goroka. It features high-altitude moss forests and offers panoramic views of the Asaro Valley.",
+                features: ["Orchid diversity", "Bird of Paradise habitat", "Scenic hiking trails"]
+            },
+
+            // --- 2. Crater Mountain WMA ---
+            "crater": {
+                title: "Crater Mountain WMA",
+                location: "Eastern Highlands Province",
+                status: "Wildlife Management Area",
+                size: "TBD",
+                fpic: "Completed",
+                livelihood: "Conservation",
+                image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200",
+                description: "One of the most extensive conservation areas, spanning multiple provinces. It is rugged, remote, and rich in biodiversity.",
+                features: ["Extensive primary forest", "High biodiversity", "Traditional land management"]
+            },
+
+            // --- 3. Hogave CCA ---
             "hogave": {
                 title: "Hogave CCA",
                 location: "Eastern Highlands Province",
@@ -103,23 +129,14 @@
                 size: "1,229 ha",
                 fpic: "Completed",
                 livelihood: "Honey & Coffee",
-                
                 image: "https://images.unsplash.com/photo-1448375240586-dfd8d395ea6c?q=80&w=1200",
-                
-                // UPDATED: New ArcGIS Map URL for Hogave
                 mapUrl: "https://www.arcgis.com/apps/mapviewer/index.html?webmap=0fa7505facc94880888e8bf54193d7d9&extent=145.1826,-6.4074,145.3094,-6.3219", 
-
-                description: "Hogave demonstrates how smaller, community-managed areas can provide immense value. Gazetted in June 2025, this 1,229-hectare site serves as a model for community-led conservation. While livelihood roll-out has faced delays, the community has successfully completed conservation needs assessments.",
-                features: [
-                    "Community-led monitoring established", 
-                    "Pilot site for NFI training", 
-                    "Rich birdlife diversity",
-                    "Sustainable land-use planning underway"
-                ],
+                description: "Hogave demonstrates how smaller, community-managed areas can provide immense value. Gazetted in June 2025, this 1,229-hectare site serves as a model for community-led conservation.",
+                features: ["Community-led monitoring", "Pilot site for NFI training", "Rich birdlife diversity"],
                 website: "https://hogaveconservation.com/"
             },
 
-            // --- VELOTIGE CCA (Updated with ArcGIS Map) ---
+            // --- 4. Velotige CCA ---
             "velotige": {
                 title: "Velotige CCA",
                 location: "Eastern Highlands Province",
@@ -128,29 +145,140 @@
                 fpic: "Completed",
                 livelihood: "Eco-Tourism, Coffee",
                 image: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1200",
-                
-                // ADDED: ArcGIS Map URL for Velotige
                 mapUrl: "https://www.arcgis.com/apps/mapviewer/index.html?webmap=0fa7505facc94880888e8bf54193d7d9&extent=145.1599,-6.0606,145.667,-5.7184",
-                
                 description: "The Velotige CCA is the largest new protected area established under GEF-7. It serves as a critical biological corridor connecting the upper montane forests.",
                 features: ["Critical habitat for Tree Kangaroos", "High-altitude cloud forest", "Water catchment for 3 districts"]
             },
 
-            // --- NATAUKA-ZAMU (Updated with ArcGIS Map) ---
+            // --- 5. Natauka-Zamu ---
             "natauka": {
-                title: "Natauka-Zamu",
+                title: "Natauka-Zamu Reserve",
                 location: "Eastern Highlands Province",
                 status: "Gazetted (June 2025)",
                 size: "94 ha",
                 fpic: "Completed",
                 livelihood: "Conservation",
                 image: "https://images.unsplash.com/photo-1596503673327-0c58d042f9b8?q=80&w=1200",
-                
-                // ADDED: ArcGIS Map URL for Natauka
                 mapUrl: "https://www.arcgis.com/apps/mapviewer/index.html?webmap=0fa7505facc94880888e8bf54193d7d9&extent=145.3617,-6.0294,145.4251,-5.9867",
-                
                 description: "Though small in size, Natauka-Zamu represents a vital step in engaging customary landowners in formal conservation agreements.",
                 features: ["Rare orchid species", "Riverine ecosystem protection"]
+            },
+
+            // --- 6. Proposed Mt. Dorohere ---
+            "dorohere": {
+                title: "Proposed Mt. Dorohere",
+                location: "Eastern Highlands Province",
+                status: "Proposed",
+                size: "TBD",
+                fpic: "Ongoing",
+                livelihood: "TBD",
+                image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1200",
+                description: "A proposed conservation area in the Eastern Highlands, currently undergoing assessment and community consultation.",
+                features: ["Mountain ecosystem", "Biodiversity assessment underway"]
+            },
+
+            // --- 7. Proposed Yasina Nature Park ---
+            "yasina": {
+                title: "Proposed Yasina Nature Park",
+                location: "Eastern Highlands Province",
+                status: "Proposed",
+                size: "TBD",
+                fpic: "Ongoing",
+                livelihood: "TBD",
+                image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200",
+                description: "Proposed as a nature park to protect local flora and fauna while providing recreational opportunities.",
+                features: ["Nature park model", "Community engagement"]
+            },
+
+            // --- 8. Proposed Artrohialika Lulume (Samiri) ---
+            "samiri": {
+                title: "Proposed Artrohialika Lulume",
+                location: "Eastern Highlands Province",
+                status: "Proposed",
+                size: "TBD",
+                fpic: "Ongoing",
+                livelihood: "TBD",
+                image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=1200",
+                description: "A proposed conservation initiative in the Samiri area of the Eastern Highlands.",
+                features: ["Community consultation", "Biodiversity hotspot"]
+            },
+
+            // --- 9. Baiyer River Wildlife Sanctuary ---
+            "baiyer": {
+                title: "Baiyer River Wildlife Sanctuary",
+                location: "Western Highlands Province",
+                status: "Wildlife Sanctuary",
+                size: "TBD",
+                fpic: "Completed",
+                livelihood: "Eco-tourism",
+                image: "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?q=80&w=1200",
+                description: "A renowned wildlife sanctuary in the Western Highlands, famous for its bird of paradise populations.",
+                features: ["Birdwatching", "Wildlife protection", "River ecosystem"]
+            },
+
+            // --- 10. Jimi Valley National Park ---
+            "jimi": {
+                title: "Jimi Valley National Park",
+                location: "Western Highlands Province",
+                status: "National Park",
+                size: "TBD",
+                fpic: "Completed",
+                livelihood: "TBD",
+                image: "https://images.unsplash.com/photo-1504280506541-aca142210171?q=80&w=1200",
+                description: "Located in the remote Jimi Valley, this park protects a unique and isolated ecosystem.",
+                features: ["Remote wilderness", "Endemic species", "Valley ecosystem"]
+            },
+
+            // --- 11. Kuk Early Agricultural Site ---
+            "kuk": {
+                title: "Kuk Early Agricultural Site",
+                location: "Western Highlands Province",
+                status: "World Heritage Site",
+                size: "116 ha",
+                fpic: "Completed",
+                livelihood: "Heritage Tourism",
+                image: "https://images.unsplash.com/photo-1599939571322-792a326991f2?q=80&w=1200",
+                description: "A UNESCO World Heritage site consisting of 116 ha of swamps in the western highlands of New Guinea. It contains archaeological remains demonstrating the technological transition to agriculture.",
+                features: ["Archaeological significance", "Early agriculture history", "Cultural heritage"]
+            },
+
+            // --- 12. Proposed Oiembo CCA ---
+            "oiembo": {
+                title: "Proposed Oiembo CCA",
+                location: "Western Highlands Province",
+                status: "Proposed",
+                size: "TBD",
+                fpic: "Ongoing",
+                livelihood: "TBD",
+                image: "https://images.unsplash.com/photo-1589556264800-08ae9e1f99eb?q=80&w=1200",
+                description: "A community-proposed conservation area in the Western Highlands, currently in the planning stages.",
+                features: ["Community initiative", "Forest protection"]
+            },
+
+            // --- 13. Proposed Mt. Giluwe ---
+            "giluwe": {
+                title: "Proposed Mt. Giluwe",
+                location: "Western Highlands Province",
+                status: "Proposed",
+                size: "TBD",
+                fpic: "Ongoing",
+                livelihood: "TBD",
+                image: "https://images.unsplash.com/photo-1463183547458-6a2c760d0912?q=80&w=1200",
+                description: "Mt. Giluwe is the second highest mountain in PNG and an ancient shield volcano. The proposed area aims to protect its unique alpine vegetation.",
+                features: ["Alpine ecosystem", "High altitude flora", "Volcanic landscape"]
+            },
+
+            // --- 14. Proposed Mt. Mul ---
+            "mul": {
+                title: "Proposed Mt. Mul",
+                location: "Western Highlands Province",
+                status: "Proposed",
+                size: "TBD",
+                fpic: "Ongoing",
+                livelihood: "TBD",
+                image: "https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?q=80&w=1200",
+                description: "Proposed conservation area centered around Mt. Mul in the Western Highlands.",
+                features: ["Mountain conservation", "Watershed protection"]
             }
         };
 
